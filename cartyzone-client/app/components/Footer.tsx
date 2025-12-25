@@ -8,11 +8,11 @@ function SiteFooter() {
   return (
     <div className="w-full">
       <Footer
-        logo={<Image src="/Logo.png" alt="site logo" width={40} height={40} />}
+        logo={<Image src="/Logo.png" alt="site logo" width={30} height={30} />}
         brandName="Cartyzone"
         socialLinks={[
           {
-            icon: <SiX />,
+            icon: <SiX size={20} />,
             href: "https://twitter.com",
             label: "Twitter",
           },

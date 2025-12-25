@@ -1,25 +1,25 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 interface FooterProps {
-  logo: React.ReactNode
-  brandName: string
+  logo: React.ReactNode;
+  brandName: string;
   socialLinks: Array<{
-    icon: React.ReactNode
-    href: string
-    label: string
-  }>
+    icon: React.ReactNode;
+    href: string;
+    label: string;
+  }>;
   mainLinks: Array<{
-    href: string
-    label: string
-  }>
+    href: string;
+    label: string;
+  }>;
   legalLinks: Array<{
-    href: string
-    label: string
-  }>
+    href: string;
+    label: string;
+  }>;
   copyright: {
-    text: string
-    license?: string
-  }
+    text: string;
+    license?: string;
+  };
 }
 
 export function Footer({
@@ -33,7 +33,7 @@ export function Footer({
   return (
     <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
       <div className="px-4 lg:px-8">
-        <div className="md:flex md:items-start md:justify-between">
+        <div className="flex items-center   justify-between  h-12">
           <a
             href="/"
             className="flex items-center gap-x-2"
@@ -42,7 +42,7 @@ export function Footer({
             {logo}
             <span className="font-bold text-xl">{brandName}</span>
           </a>
-          <ul className="flex list-none mt-6 md:mt-0 space-x-3">
+          <ul className="flex list-none  md:mt-0 space-x-3">
             {socialLinks.map((link, i) => (
               <li key={i}>
                 <Button
@@ -59,9 +59,9 @@ export function Footer({
             ))}
           </ul>
         </div>
-        <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
-          <nav className="lg:mt-0 lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
+        <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 sm:grid sm:grid-cols-10">
+          <nav className="sm:mt-0 sm:col-[4/11]">
+            <ul className="list-none flex flex-wrap -my-1 -mx-2 sm:justify-end">
               {mainLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-2 shrink-0">
                   <a
@@ -74,8 +74,8 @@ export function Footer({
               ))}
             </ul>
           </nav>
-          <div className="mt-6 lg:mt-0 lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
+          <div className="mt-6 sm:mt-0 sm:col-[4/11]">
+            <ul className="list-none flex flex-wrap -my-1 -mx-3 sm:justify-end">
               {legalLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-3 shrink-0">
                   <a
@@ -88,12 +88,12 @@ export function Footer({
               ))}
             </ul>
           </div>
-          <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
+          <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap sm:mt-0 sm:row-[1/3] sm:col-[1/4]">
             <div>{copyright.text}</div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
