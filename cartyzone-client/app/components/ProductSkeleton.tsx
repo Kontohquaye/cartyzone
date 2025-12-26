@@ -1,7 +1,7 @@
-const ProductSkeleton = () => {
+const ProductSkeleton = ({ length = 3 }: { length?: number }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full px-4">
-      {Array.from({ length: 3 }).map((_, i) => {
+      {Array.from({ length }).map((_, i) => {
         return (
           <div className="  my-4" key={i}>
             <div className="relative h-60 mb-4 flex justify-center items-center bg-gray-300 animate-pulse">

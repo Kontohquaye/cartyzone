@@ -8,4 +8,5 @@ export interface Product {
   created_At: Date;
   edited_At: Date;
   _id: string;
+  description: string;
 }

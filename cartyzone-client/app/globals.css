@@ -54,8 +54,7 @@
   @apply flex items-center justify-between;
 }
 
-.nav-items,
-.nav-content {
+.nav-items {
   @apply flex items-center gap-3;
 }
 
@@ -98,10 +97,10 @@
 
 @media screen and (max-width: 600px) {
   #menu:checked ~ .menu-close {
-    @apply block;
+    @apply block! ml-3!;
   }
   .menu-icon {
-    @apply inline-block;
+    @apply inline-block! ml-3!;
   }
   .nav-items {
     @apply block absolute bottom-[100px] opacity-0 translate-y-[-20px] scale-[0.95] pointer-events-none transition-transform duration-500 ease-in bg-white

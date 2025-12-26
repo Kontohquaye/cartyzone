@@ -12,6 +12,8 @@ export const products = [
     edited_At: date,
     _id: "1",
     product: urls[0],
+    description:
+      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
   },
   {
     name: "Car",
@@ -23,6 +25,8 @@ export const products = [
     edited_At: date,
     _id: "2",
     product: urls[1],
+    description:
+      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
   },
   {
     name: "A selling Beats Crops",
@@ -34,6 +38,8 @@ export const products = [
     edited_At: date,
     _id: "3",
     product: urls[2],
+    description:
+      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
   },
   {
     name: "Mine",
@@ -45,17 +51,21 @@ export const products = [
     edited_At: date,
     _id: "4",
     product: urls[1],
+    description:
+      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
   },
   {
     name: "Hill figure",
     price: 212.0,
     rating: 4,
     instock: 30,
-    category: "Apple Lines",
+    category: "Apple Linses",
     created_At: date,
     edited_At: date,
     _id: "5",
     product: urls[0],
+    description:
+      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
   },
   {
     name: "Think Pad",
@@ -67,5 +77,7 @@ export const products = [
     edited_At: date,
     _id: "6",
     product: urls[2],
+    description:
+      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
   },
 ];
