@@ -22,7 +22,9 @@ const CTASection = () => {
           Explore our collection online or visit us in person.
         </p>
         <Link href="/shop">
-          <Button className="bg-green-900 rounded-full ">Shop Now</Button>
+          <Button className="bg-lime-700 hover:bg-lime-900 rounded-full ">
+            Shop Now
+          </Button>
         </Link>
       </div>
     </div>

@@ -10,3 +10,8 @@ export interface Product {
   _id: string;
   description: string;
 }
+
+export interface ProductDetails {
+  productId: string;
+  name: string;
+}

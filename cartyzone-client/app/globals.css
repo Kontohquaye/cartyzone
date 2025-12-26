@@ -95,6 +95,16 @@
   @apply text-sm font-semibold text-[#333];
 }
 
+.rating-values > span {
+  cursor: pointer;
+  padding-inline: 2px;
+}
+
+.rating-values span:hover,
+.rating-values span:hover ~ span {
+  color: gold;
+}
+
 @media screen and (max-width: 600px) {
   #menu:checked ~ .menu-close {
     @apply block! ml-3!;

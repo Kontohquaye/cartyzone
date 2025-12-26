@@ -5,11 +5,12 @@ import { Star, StarHalf } from "lucide-react";
 import { convertRating } from "@/lib/utils";
 import Link from "next/link";
 
-const RecentProducts = React.memo(({ products }: { products: Product[] }) => {
+const RelatedProducts = React.memo(({ products }: { products: Product[] }) => {
   return (
-    <div className="container max-w-[100vw]  mx-auto ">
-      {!products.length && "No recent Products"}
-      <div className="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full px-4">
+    <div className="container max-w-[100vw]  ">
+      <h1 className="text-2xl font-bold">Related Products</h1>
+      {!products.length && "No related Products"}
+      <div className="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full ">
         {products.length &&
           products.map((product) => {
             return (
@@ -51,4 +52,4 @@ const RecentProducts = React.memo(({ products }: { products: Product[] }) => {
   );
 });
 
-export default RecentProducts;
+export default RelatedProducts;

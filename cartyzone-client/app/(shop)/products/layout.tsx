@@ -8,7 +8,7 @@ export default function ProductsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="store-layout">
+    <main className="store-layout ">
       <Navbar />
       {children}
       <SiteFooter />

@@ -4,7 +4,7 @@ const date = new Date(Date.now());
 export const products = [
   {
     name: "apple juic",
-    price: 212.0,
+    price: 4.99,
     rating: 3.4,
     instock: 300.5,
     category: "Phones",
@@ -13,7 +13,7 @@ export const products = [
     _id: "1",
     product: urls[0],
     description:
-      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
+      "Freshly pressed apple juice made from carefully selected, ripe apples to deliver a naturally sweet and refreshing taste. This juice is free from artificial flavors, preservatives, and added sugars, making it a healthy choice for all ages. Rich in essential vitamins and antioxidants, it helps keep you hydrated and energized throughout the day. Enjoy it chilled on its own or pair it with meals for a refreshing boost.",
   },
   {
     name: "Car",
@@ -26,11 +26,11 @@ export const products = [
     _id: "2",
     product: urls[1],
     description:
-      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
+      "A reliable and well-engineered car designed to deliver comfort, performance, and safety in every drive. It features a modern interior with ergonomic seating, advanced infotainment, and efficient climate control. Built with fuel efficiency in mind, this car offers smooth handling and responsive braking, making it suitable for both city commutes and long-distance travel. Ideal for drivers looking for a balance of style, reliability, and practicality.",
   },
   {
     name: "A selling Beats Crops",
-    price: 2122.0,
+    price: 299.99,
     rating: 4,
     instock: 30,
     category: "Phones",
@@ -39,11 +39,11 @@ export const products = [
     _id: "3",
     product: urls[2],
     description:
-      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
+      "Premium Beats headphones crafted to deliver deep bass, clear mids, and crisp highs for an immersive audio experience. Designed for all-day comfort, they feature soft ear cushions and an adjustable fit. With durable construction and reliable performance, these headphones are perfect for music lovers, workouts, travel, and everyday use. Enjoy superior sound quality whether you're listening to music, watching movies, or taking calls.",
   },
   {
     name: "Mine",
-    price: 2122.0,
+    price: 49.99,
     rating: 2.5,
     instock: 30,
     category: "Telecel",
@@ -52,11 +52,11 @@ export const products = [
     _id: "4",
     product: urls[1],
     description:
-      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
+      "A practical and easy-to-use product designed for everyday convenience. Built with simplicity and reliability in mind, it offers consistent performance for routine tasks. Its straightforward design makes it suitable for a wide range of users, while its durable construction ensures long-term usability. A solid choice for those seeking functionality without unnecessary complexity.",
   },
   {
     name: "Hill figure",
-    price: 212.0,
+    price: 129.99,
     rating: 4,
     instock: 30,
     category: "Apple Linses",
@@ -65,11 +65,11 @@ export const products = [
     _id: "5",
     product: urls[0],
     description:
-      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
+      "A thoughtfully designed product that combines style, comfort, and practicality. Made with quality materials, it offers a refined look while maintaining durability for daily use. Its lightweight design ensures ease of handling, while its modern aesthetic complements a wide range of setups. Ideal for users who value both performance and visual appeal in their accessories.",
   },
   {
     name: "Think Pad",
-    price: 12.0,
+    price: 899.99,
     rating: 4,
     instock: 1,
     category: "Pipes",
@@ -78,6 +78,6 @@ export const products = [
     _id: "6",
     product: urls[2],
     description:
-      "Thskkjbsk sbdjs riting objects: 100% (13/13), 8.51 KiB | 2.83 MiB/s, done Total 13 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0) remote: Resolving deltas: 100% (6/6), completed with 5 local objects To https://github.com/Kontohquaye/cartyzone.git    d18c5d1..b9b36c6  main -> main",
+      "A powerful and versatile laptop designed for professionals, students, and creators. Equipped with fast processing capabilities and a responsive keyboard, it supports efficient multitasking and long working sessions. The durable build ensures reliability, while the sleek and portable design makes it easy to carry anywhere. Ideal for productivity, entertainment, and everyday computing needs.",
   },
 ];

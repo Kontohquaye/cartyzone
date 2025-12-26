@@ -7,19 +7,21 @@ import { Handbag, Menu, X } from "lucide-react";
 const Navbar = () => {
   return (
     <div className="navbar  pt-3 ">
-      <div className="logo mx-4">
-        <Image
-          src={"/Logo.png"}
-          alt="cartyzone logo"
-          width={40}
-          height={40}
-          className="h-auto"
-        />
-        <div className="logo_name text-xl">
-          <span className="text-green-700">Carty</span>
-          <span className="text-green-400">zone</span>
+      <Link href="/">
+        <div className="logo mx-4">
+          <Image
+            src={"/Logo.png"}
+            alt="cartyzone logo"
+            width={40}
+            height={40}
+            className="h-auto"
+          />
+          <div className="logo_name text-xl">
+            <span className="text-green-700">Carty</span>
+            <span className="text-green-400">zone</span>
+          </div>
         </div>
-      </div>
+      </Link>
       <div className="nav-content flex  z-50">
         <Link href={"#"} className="">
           <Handbag />
