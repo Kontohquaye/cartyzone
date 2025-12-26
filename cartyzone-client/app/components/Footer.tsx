@@ -3,8 +3,8 @@ import { Footer } from "@/components/ui/footer";
 import Image from "next/image";
 import { SiX } from "@icons-pack/react-simple-icons";
 
+const year = new Date(Date.now()).getFullYear();
 function SiteFooter() {
-  const year = new Date(Date.now()).getFullYear();
   return (
     <div className="w-full">
       <Footer

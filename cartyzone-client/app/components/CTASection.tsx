@@ -6,7 +6,7 @@ const CTASection = () => {
   return (
     <div className="section relative min-h-[70vh] mt-4">
       <Image
-        src="/purchase.jpg"
+        src="https://files.edgestore.dev/9fafx9jpqygtarv1/Cartyzone/_public/purchase.jpg"
         alt="cta-image"
         fill
         className="object-cover"
