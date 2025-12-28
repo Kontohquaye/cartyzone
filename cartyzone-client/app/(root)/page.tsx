@@ -7,7 +7,7 @@ import ProductSkeleton from "../components/ProductSkeleton";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className=" w-full">
       <HeroSection />
       <Suspense fallback={<ProductSkeleton />}>
         <RecentProducts products={products} />

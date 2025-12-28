@@ -1,6 +1,104 @@
 import { urls } from "./hero_images";
 
 const date = new Date(Date.now());
+export const categories = [
+  {
+    id: "cat_001",
+    name: "Electronics",
+    slug: "electronics",
+  },
+  {
+    id: "cat_002",
+    name: "Fashion",
+    slug: "fashion",
+  },
+  {
+    id: "cat_003",
+    name: "Home & Living",
+    slug: "home-living",
+  },
+  {
+    id: "cat_004",
+    name: "Beauty & Personal Care",
+    slug: "beauty-personal-care",
+  },
+  {
+    id: "cat_005",
+    name: "Health & Wellness",
+    slug: "health-wellness",
+  },
+  {
+    id: "cat_006",
+    name: "Sports & Outdoors",
+    slug: "sports-outdoors",
+  },
+  {
+    id: "cat_007",
+    name: "Toys & Games",
+    slug: "toys-and-games",
+  },
+  {
+    id: "cat_008",
+    name: "Baby & Kids",
+    slug: "baby-kids",
+  },
+  {
+    id: "cat_009",
+    name: "Groceries",
+    slug: "groceries",
+  },
+  {
+    id: "cat_010",
+    name: "Books & Stationery",
+    slug: "books-stationery",
+  },
+  {
+    id: "cat_011",
+    name: "Automotive",
+    slug: "automotive",
+  },
+  {
+    id: "cat_012",
+    name: "Pet Supplies",
+    slug: "pet-supplies",
+  },
+  {
+    id: "cat_013",
+    name: "Jewelry & Accessories",
+    slug: "jewelry-accessories",
+  },
+  {
+    id: "cat_014",
+    name: "Office Supplies",
+    slug: "office-supplies",
+  },
+  {
+    id: "cat_015",
+    name: "Garden & DIY",
+    slug: "garden-diy",
+  },
+  {
+    id: "cat_016",
+    name: "Music & Instruments",
+    slug: "music-instruments",
+  },
+  {
+    id: "cat_017",
+    name: "Gaming",
+    slug: "gaming",
+  },
+  {
+    id: "cat_018",
+    name: "Travel & Luggage",
+    slug: "travel-luggage",
+  },
+  {
+    id: "cat_019",
+    name: "Gift Cards",
+    slug: "gift-cards",
+  },
+];
+
 export const products = [
   {
     name: "apple juic",
@@ -79,5 +177,35 @@ export const products = [
     product: urls[2],
     description:
       "A powerful and versatile laptop designed for professionals, students, and creators. Equipped with fast processing capabilities and a responsive keyboard, it supports efficient multitasking and long working sessions. The durable build ensures reliability, while the sleek and portable design makes it easy to carry anywhere. Ideal for productivity, entertainment, and everyday computing needs.",
+  },
+];
+
+export const posts = [
+  {
+    _id: 1,
+    image: urls[1],
+    date: "Aug 14, 2024",
+    readTime: "1 min read",
+    title: "essential anti-aging practices",
+    excerpt:
+      "When it comes to design, the Wix Blog has everything you need to create beautiful posts that will grab your readers’ attention.",
+  },
+  {
+    _id: 2,
+    image: urls[0],
+    date: "Aug 12, 2024",
+    readTime: "1 min read",
+    title: "simple steps to glowing skin",
+    excerpt:
+      "When it comes to design, the Wix Blog has everything you need to create beautiful posts that will grab your readers’ attention.",
+  },
+  {
+    _id: 3,
+    image: urls[2],
+    date: "Aug 10, 2024",
+    readTime: "1 min read",
+    title: "top moisturizers for all skin types",
+    excerpt:
+      "When it comes to design, the Wix Blog has everything you need to create beautiful posts that will grab your readers’ attention.",
   },
 ];

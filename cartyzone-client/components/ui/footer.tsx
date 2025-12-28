@@ -32,7 +32,7 @@ export function Footer({
 }: FooterProps) {
   return (
     <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
-      <div className="px-4 lg:px-8">
+      <div className="px-4 ">
         <div className="flex items-center   justify-between  h-12">
           <a
             href="/"

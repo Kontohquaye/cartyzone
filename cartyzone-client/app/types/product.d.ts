@@ -15,3 +15,12 @@ export interface ProductDetails {
   productId: string;
   name: string;
 }
+
+export interface PriceRangeSliderProps {
+  min?: number;
+  max?: number;
+  gap?: number;
+  initialMin?: number;
+  initialMax?: number;
+  onChange?: (min: number, max: number) => void;
+}

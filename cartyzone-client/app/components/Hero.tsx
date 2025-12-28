@@ -7,7 +7,7 @@ import { urls } from "../data/hero_images";
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="section relative min-h-[70vh]">
+    <div className="container max-w-screen w-full relative min-h-[70vh]">
       <Image
         src={urls[index]}
         alt="hero-images"

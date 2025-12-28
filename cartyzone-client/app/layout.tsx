@@ -17,7 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.className} antialiased`}>
+    <html
+      lang="en"
+      className={`${poppins.className} antialiased selection:bg-lime-700`}
+    >
       <body>{children}</body>
     </html>
   );

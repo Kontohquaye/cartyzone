@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -45,7 +46,14 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 } */
-
+.markdown-output {
+  @apply prose prose-slate max-w-none
+    prose-pre:bg-transparent
+    prose-code:bg-transparent
+    prose-code:text-inherit
+    prose-code:before:content-none
+    prose-code:after:content-none;
+}
 .logo {
   @apply flex items-center gap-3;
 }
@@ -80,7 +88,7 @@
 }
 
 .container {
-  @apply mt-10;
+  @apply mt-3;
 }
 
 .name {
@@ -106,6 +114,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  #items {
+    @apply w-0;
+  }
   #menu:checked ~ .menu-close {
     @apply block! ml-3!;
   }
@@ -113,7 +124,7 @@
     @apply inline-block! ml-3!;
   }
   .nav-items {
-    @apply block absolute bottom-[100px] opacity-0 translate-y-[-20px] scale-[0.95] pointer-events-none transition-transform duration-500 ease-in bg-white
+    @apply flex flex-col items-center gap-3 absolute bottom-300 opacity-0 translate-y-2.5 scale-[0.95] pointer-events-none transition-transform duration-100 ease-in bg-white
     /* display: block;
     position: absolute;
     bottom: 100px;
@@ -131,7 +142,7 @@
   }
 
   #menu:checked ~ #items {
-    @apply block z-[inherit] h-fit top-full shadow-sm min-w-[50vw] right-0 opacity-100  translate-y-0 scale-100 pointer-events-auto
+    @apply flex flex-col items-center gap-3 z-[inherit] h-fit top-full shadow-sm min-w-[50vw] right-0 opacity-100  translate-y-0 scale-100 pointer-events-auto
     /* display: block;
     z-index: inherit;
     height: fit-content;

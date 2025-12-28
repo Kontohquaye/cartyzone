@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const CTASection = () => {
   return (
-    <div className="section relative min-h-[70vh] mt-4">
+    <div className="section relative min-h-[70vh] ">
       <Image
         src="https://files.edgestore.dev/9fafx9jpqygtarv1/Cartyzone/_public/purchase.jpg"
         alt="cta-image"
@@ -19,10 +19,10 @@ const CTASection = () => {
           Ready to find something you&#39;ll love?
         </h1>
         <p className="mt-4 text-base md:text-lg text-white/80 max-w-xl">
-          Explore our collection online or visit us in person.
+          Explore our collection online .
         </p>
-        <Link href="/shop">
-          <Button className="bg-lime-700 hover:bg-lime-900 rounded-full ">
+        <Link href="/products">
+          <Button className="bg-lime-700 hover:bg-lime-900 rounded-full cursor-pointer ">
             Shop Now
           </Button>
         </Link>

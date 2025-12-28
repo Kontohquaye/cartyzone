@@ -3,6 +3,7 @@ import Link from "next/link";
 
 // other imports
 import { Handbag, Menu, X } from "lucide-react";
+import { CartButton } from "./Cart";
 
 const Navbar = () => {
   return (
@@ -23,9 +24,9 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="nav-content flex  z-50">
-        <Link href={"#"} className="">
+        <CartButton>
           <Handbag />
-        </Link>
+        </CartButton>
         <input type="checkbox" name="menu" id="menu" />
         <label htmlFor="menu" className="menu-open mr-4 ">
           <Menu className="menu-icon" />
@@ -34,11 +35,11 @@ const Navbar = () => {
           <X className="menu-icon-x" />
         </label>
 
-        <div className="nav-items mr-4 " id="items">
+        <div className="nav-items sm:mr-4 " id="items">
           <Link href={"/"}>Home</Link>
-          <Link href={"#"}>Shop</Link>
-          <Link href={"#"}>About</Link>
-          <Link href={"#"}>Contact</Link>
+          <Link href={"/products"}>Shop</Link>
+          <Link href={"/about"}>About</Link>
+          <Link href={"/contact"}>Contact</Link>
         </div>
       </div>
     </div>

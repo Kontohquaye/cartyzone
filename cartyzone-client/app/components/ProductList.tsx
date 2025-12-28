@@ -4,14 +4,22 @@ import Image from "next/image";
 import { Star, StarHalf } from "lucide-react";
 import { convertRating } from "@/lib/utils";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-const RelatedProducts = React.memo(({ products }: { products: Product[] }) => {
+const ProductList = React.memo(({ products }: { products: Product[] }) => {
+  //   products = [];
+
   return (
-    <div className="container max-w-[100vw]  ">
-      <h1 className="text-2xl font-bold mb-2">Related Products</h1>
-      {!products.length && "No related Products"}
-      <div className="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full ">
-        {products.length &&
+    <div className="container max-w-[100vw]   ">
+      {!products.length && (
+        <div className="empty-search gap-3 flex items-center justify-center flex-col">
+          <h1>We couldn't find any matches</h1>
+          <p>Try different filters or another category. </p>
+          <Button variant={"link"}>Clear Filters</Button>
+        </div>
+      )}
+      <div className="product-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full ">
+        {products.length > 0 &&
           products.map((product) => {
             return (
               <Link href={`/products/${product._id}`} key={product._id}>
@@ -52,4 +60,4 @@ const RelatedProducts = React.memo(({ products }: { products: Product[] }) => {
   );
 });
 
-export default RelatedProducts;
+export default ProductList;

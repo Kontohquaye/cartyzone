@@ -3,7 +3,7 @@ const ProductSkeleton = ({ length = 3 }: { length?: number }) => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full px-4">
       {Array.from({ length }).map((_, i) => {
         return (
-          <div className="  my-4" key={i}>
+          <div className="my-4" key={i}>
             <div className="relative h-60 mb-4 flex justify-center items-center bg-gray-300 animate-pulse">
               <svg
                 className="w-10 h-10 text-gray-200 dark:text-gray-600"
