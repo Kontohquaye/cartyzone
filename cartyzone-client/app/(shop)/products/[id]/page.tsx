@@ -1,9 +1,9 @@
+import AddToCart from "@/app/components/AddToCartButton";
 import ProductSkeleton from "@/app/components/ProductSkeleton";
 import ProductTabs from "@/app/components/ProductTabs";
 import RelatedProducts from "@/app/components/RelatedProducts";
 import { products } from "@/app/data/data";
 import { ProductDetails } from "@/app/types/product";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Suspense } from "react";
 
@@ -46,17 +46,7 @@ const ProductDetail = async ({
             {product?.description}
           </p>
           <div className="actions ">
-            <input
-              type="number"
-              name="quantity"
-              min={1}
-              id="prod-quantity"
-              className="border border-gray-300 px-3 py-2 w-20 focus:outline-none focus:ring-1 focus:ring-gray-500"
-            />
-
-            <Button className="bg-lime-700 hover:bg-lime-900 text-white rounded-full px-6 py-2 ml-3">
-              Add to cart
-            </Button>
+            <AddToCart product_id={product?._id!} />
           </div>
           <div className="line border-b border-b-gray-300"></div>
           <div className="prod-category text-lime-700">
@@ -69,12 +59,14 @@ const ProductDetail = async ({
                 alt="visa-card logo"
                 width={70}
                 height={30}
+                className="h-auto w-auto"
               />
               <Image
                 src="https://files.edgestore.dev/9fafx9jpqygtarv1/Cartyzone/_public/Visa-Card-Logo-No-Background.png"
                 alt="master-card logo"
                 width={70}
                 height={30}
+                className="h-auto w-auto"
               />
             </div>
             <div className="provider flex items-center gap-3">
@@ -84,6 +76,7 @@ const ProductDetail = async ({
                 alt="paystack logo"
                 width={90}
                 height={30}
+                className="h-auto w-auto"
               />
             </div>
           </div>
