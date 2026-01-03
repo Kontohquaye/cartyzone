@@ -15,17 +15,17 @@ export default function AdminDashboard() {
 
       {/* ACTION CARDS */}
       <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-        <ActionCard title="Create Blog Post" link="/blog/create" />
+        <ActionCard title="Create Blog Post" link="/dashboard/blog/create" />
 
-        <ActionCard title="Manage Blog Posts" link="#" />
+        <ActionCard title="Manage Blog Posts" link="/dashboard/blog/edit" />
 
-        <ActionCard title="Add Product" link="#" />
+        <ActionCard title="Add Product" link="/dashboard/products/add" />
 
-        <ActionCard title="Manage Products" link="#" />
+        <ActionCard title="Manage Products" link="/dashboard/products/edit" />
       </div>
 
       {/* PRODUCTS */}
-      <Section title="Products">
+      <Section title="Products" link="/dashboard/products/edit">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {items.map((item) => (
             <ProductCard
@@ -39,7 +39,7 @@ export default function AdminDashboard() {
       </Section>
 
       {/* BLOG POSTS */}
-      <Section title="Blog Posts">
+      <Section title="Blog Posts" link="/dashboard/blog/edit">
         <div className="space-y-4 max-w-3xl">
           {blogs.map((blog) => (
             <BlogRow key={blog._id} title={blog.title} />

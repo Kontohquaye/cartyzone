@@ -15,3 +15,9 @@ export const convertRating = (rating: number) => {
     hasHalfStar,
   };
 };
+
+export const addedFee = {
+  delivery: 7,
+  service: 1,
+  tax: 1,
+};

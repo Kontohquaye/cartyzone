@@ -11,7 +11,7 @@ const Products = () => {
   const searchParams = useSearchParams();
 
   const search = searchParams.get("category");
-  console.log(search);
+  // console.log(search);
   return (
     <div className="container max-w-screen w-full grid grid-cols-1 sm:grid-cols-4 sm:gap-3 px-4">
       <div className="filters ">

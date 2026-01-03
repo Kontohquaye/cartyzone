@@ -6,10 +6,17 @@ import Link from "next/link";
 import { Handbag, Menu, X } from "lucide-react";
 import { CartButton } from "./Cart";
 import useCartStore from "../store/cartStore";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const cart = useCartStore((state) => state.cart);
+  const setCart = useCartStore((state) => state.setInitialCart);
   // console.log(cart);
+  useEffect(() => {
+    if (localStorage.getItem("cart"))
+      setCart(JSON.parse(localStorage.getItem("cart")!).products);
+  }, []);
+
   const products = Object.values(cart.products).flat();
   // console.log(products);
   const quantity = products.reduce((sum, current) => sum + current.quantity, 0);

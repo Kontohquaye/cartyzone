@@ -6,15 +6,31 @@ import Image from "next/image";
 import Link from "next/link";
 import useCartStore from "../store/cartStore";
 import { products } from "../data/data";
+import { cartItem } from "../store/cartStoreTypes";
 
 export default function CartDetails() {
   const cart = useCartStore((state) => state.cart);
+  const removeProduct = useCartStore((state) => state.removeFromCart);
   const productList = Object.values(cart.products).flat();
   const allProducts = products;
   //   console.log(products);
   const idSet = new Set(productList.map((p) => p.product_id));
   const filteredProducts = allProducts.filter((p) => idSet.has(p._id));
   //   console.log(filteredProducts);
+  const handleRemove = (id: string) => {
+    const localStore: { products: cartItem[] } = JSON.parse(
+      localStorage.getItem("cart")!
+    );
+    // console.log(localStore);
+    // console.log(localStore.products.filter((p) => p.product_id !== id));
+    const updatedCart = localStore.products.filter((p) => p.product_id !== id);
+    localStorage.setItem(
+      "cart",
+      JSON.stringify({ products: [...updatedCart] })
+    );
+
+    removeProduct(id);
+  };
   return (
     <div className="flex flex-col h-full">
       {/* CART ITEMS */}
@@ -46,7 +62,12 @@ export default function CartDetails() {
                   </p>
                 </div>
 
-                <button className="text-muted-foreground hover:text-black">
+                <button
+                  className="text-muted-foreground hover:text-black"
+                  onClick={() => {
+                    handleRemove(product._id);
+                  }}
+                >
                   <X size={18} />
                 </button>
               </div>
@@ -80,9 +101,9 @@ export default function CartDetails() {
 
           <Link href={"/products"}>
             <Button
-              onClick={() => {
-                window.location.reload();
-              }}
+              // onClick={() => {
+              //   window.location.reload();
+              // }}
               className="rounded-full bg-lime-600 hover:bg-lime-700 text-white px-6"
             >
               Start shopping
@@ -94,11 +115,25 @@ export default function CartDetails() {
       {/* FOOTER */}
       <div className="border-t px-5 py-4 space-y-4">
         {/* Subtotal */}
-        <div className="flex justify-between text-sm font-medium">
-          <span>Subtotal:</span>
-          <span>$180.00</span>
-        </div>
+        {idSet.size > 0 && (
+          <div className="flex justify-between text-sm font-medium">
+            <span>Subtotal:</span>
+            <span>
+              GHS{" "}
+              {filteredProducts
+                .reduce((total, product) => {
+                  const cartItem = cart.products.find(
+                    (item) => item.product_id === product._id
+                  );
 
+                  if (!cartItem) return total;
+
+                  return Number(total + product.price * cartItem.quantity);
+                }, 0)
+                .toFixed(2)}
+            </span>
+          </div>
+        )}
         <Link href="/cart" className="block">
           <Button
             variant="outline"

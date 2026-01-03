@@ -19,6 +19,7 @@ const PriceRangeSlider = ({
   const searchParams = useSearchParams();
 
   const search = searchParams.get("category");
+
   const baseUrl = search ? `/products?category=${search}` : "/products?";
 
   const minPercent = (minVal / max) * 100;
@@ -28,10 +29,11 @@ const PriceRangeSlider = ({
     const value = Math.min(+e.target.value, maxVal - gap);
     setMinVal(value);
     onChange?.(value, maxVal);
+
     router.push(
       search
-        ? baseUrl + `&min-price=${minVal}&max-price=${maxVal}`
-        : baseUrl + `min-price=${minVal}&max-price=${maxVal}`
+        ? `${baseUrl}&min-price=${value}&max-price=${maxVal}`
+        : `${baseUrl}min-price=${value}&max-price=${maxVal}`
     );
   };
 
@@ -39,7 +41,8 @@ const PriceRangeSlider = ({
     const value = Math.max(+e.target.value, minVal + gap);
     setMaxVal(value);
     onChange?.(minVal, value);
-    router.push(baseUrl + `&min-price=${minVal}&max-price=${maxVal}`);
+
+    router.push(`${baseUrl}&min-price=${minVal}&max-price=${value}`);
   };
 
   return (
