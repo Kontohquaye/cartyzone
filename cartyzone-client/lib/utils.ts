@@ -21,3 +21,35 @@ export const addedFee = {
   service: 1,
   tax: 1,
 };
+
+export async function fetchData<T>(url: string, cache = false): Promise<T> {
+  const res = await fetch(
+    url,
+    cache ? { next: { revalidate: 60 } } : { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json() as Promise<T>;
+}
+
+// export const fetchData = async (url: string, cache: boolean = false) => {
+//   const res = await fetch(
+//     url,
+//     !cache
+//       ? { cache: "no-store" }
+//       : {
+//           next: {
+//             revalidate: 60,
+//           },
+//         }
+//   );
+
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+//   // console.log(res.body);
+//   return await res.json();
+// };

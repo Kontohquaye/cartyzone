@@ -32,8 +32,8 @@ const PriceRangeSlider = ({
 
     router.push(
       search
-        ? `${baseUrl}&min-price=${value}&max-price=${maxVal}`
-        : `${baseUrl}min-price=${value}&max-price=${maxVal}`
+        ? `${baseUrl}&minPrice=${value}&maxPrice=${maxVal}`
+        : `${baseUrl}minPrice=${value}&maxPrice=${maxVal}`
     );
   };
 
@@ -42,7 +42,7 @@ const PriceRangeSlider = ({
     setMaxVal(value);
     onChange?.(minVal, value);
 
-    router.push(`${baseUrl}&min-price=${minVal}&max-price=${value}`);
+    router.push(`${baseUrl}&minPrice=${minVal}&maxPrice=${value}`);
   };
 
   return (
