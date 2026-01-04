@@ -183,33 +183,3 @@ export const products = [
       'A powerful and versatile laptop designed for professionals, students, and creators. Equipped with fast processing capabilities and a responsive keyboard, it supports efficient multitasking and long working sessions. The durable build ensures reliability, while the sleek and portable design makes it easy to carry anywhere. Ideal for productivity, entertainment, and everyday computing needs.',
   },
 ];
-
-export const posts = [
-  {
-    _id: 1,
-    image: urls[1],
-    date: 'Aug 14, 2024',
-    readTime: '1 min read',
-    title: 'essential anti-aging practices',
-    excerpt:
-      'When it comes to design, the Wix Blog has everything you need to create beautiful posts that will grab your readers’ attention.',
-  },
-  {
-    _id: 2,
-    image: urls[0],
-    date: 'Aug 12, 2024',
-    readTime: '1 min read',
-    title: 'simple steps to glowing skin',
-    excerpt:
-      'When it comes to design, the Wix Blog has everything you need to create beautiful posts that will grab your readers’ attention.',
-  },
-  {
-    _id: 3,
-    image: urls[2],
-    date: 'Aug 10, 2024',
-    readTime: '1 min read',
-    title: 'top moisturizers for all skin types',
-    excerpt:
-      'When it comes to design, the Wix Blog has everything you need to create beautiful posts that will grab your readers’ attention.',
-  },
-];

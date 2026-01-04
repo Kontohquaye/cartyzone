@@ -14,7 +14,7 @@ const RecentProducts = React.memo(
           {products.length &&
             products.map((product) => {
               return (
-                <Link href={`/products/${product._id}`} key={product._id}>
+                <Link href={`/products/${product.id}`} key={product.id}>
                   <div className="product flex flex-col transition-transform hover:-translate-y-1">
                     <div className="image relative w-full h-80 overflow-hidden">
                       <Image
@@ -38,7 +38,9 @@ const RecentProducts = React.memo(
                       </div>
 
                       <div className="name">{product.name}</div>
-                      <div className="category">{product.category}</div>
+                      <div className="category">
+                        {product.category.toLocaleUpperCase()}
+                      </div>
                       <div className="price">{`GHS ${product.price.toFixed(
                         2
                       )}`}</div>

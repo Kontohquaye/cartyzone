@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Star, StarHalf } from "lucide-react";
 import { convertRating } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import EmptyUI from "./EmptyUI";
 
 const ProductList = React.memo(({ products }: { products: Product[] }) => {
@@ -17,7 +16,7 @@ const ProductList = React.memo(({ products }: { products: Product[] }) => {
         {products.length > 0 &&
           products.map((product) => {
             return (
-              <Link href={`/products/${product._id}`} key={product._id}>
+              <Link href={`/products/${product.id}`} key={product.id}>
                 <div className="product flex flex-col transition-transform hover:-translate-y-1">
                   <div className="image relative w-full h-80 overflow-hidden">
                     <Image
@@ -41,7 +40,9 @@ const ProductList = React.memo(({ products }: { products: Product[] }) => {
                     </div>
 
                     <div className="name">{product.name}</div>
-                    <div className="category">{product.category}</div>
+                    <div className="category">
+                      {product.category.toLocaleUpperCase()}
+                    </div>
                     <div className="price">{`GHS ${product.price.toFixed(
                       2
                     )}`}</div>

@@ -5,9 +5,9 @@ export interface Product {
   rating: number;
   instock: number;
   category: string;
-  created_At: Date;
-  edited_At: Date;
-  _id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  id: string;
   description: string;
 }
 

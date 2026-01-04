@@ -4,7 +4,7 @@ import ProductSkeleton from "@/app/components/ProductSkeleton";
 import RangeSlider from "@/app/components/RangeSlider";
 import { products, categories } from "@/app/data/data";
 import { Product } from "@/app/types/product";
-import { fetchData } from "@/lib/utils";
+import { fetchData, baseUrl } from "@/lib/utils";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -25,7 +25,7 @@ const Products = () => {
 
       try {
         const result = await fetchData<Product[]>(
-          `http://localhost:3500/products?${query}`,
+          `${baseUrl}products?${query}`,
           true
         );
         setData(result);

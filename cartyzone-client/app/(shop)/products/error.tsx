@@ -1,27 +1,15 @@
-"use client"; // Error boundaries must be Client Components
+"use client";
 
-import { useEffect } from "react";
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
+export default function Error({ reset }: { reset: () => void }) {
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <div className="flex flex-col items-center justify-center py-24 text-center">
+      <h2 className="text-lg font-medium text-gray-800 mb-4">
+        Something went wrong!
+      </h2>
+
       <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        onClick={() => reset()}
+        className="px-4 py-2 text-sm rounded-md bg-green-600 text-white hover:bg-green-700 transition"
       >
         Try again
       </button>

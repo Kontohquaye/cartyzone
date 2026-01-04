@@ -5,17 +5,27 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import useCartStore from "../store/cartStore";
-import { products } from "../data/data";
 import { cartItem } from "../store/cartStoreTypes";
+import { useEffect, useState } from "react";
+import { Product } from "../types/product";
+import { baseUrl, fetchData } from "@/lib/utils";
 
 export default function CartDetails() {
   const cart = useCartStore((state) => state.cart);
   const removeProduct = useCartStore((state) => state.removeFromCart);
   const productList = Object.values(cart.products).flat();
+  const [products, setProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products: Product[] = await fetchData(`${baseUrl}products`, true);
+      setProducts(products);
+    };
+    fetchProducts();
+  }, [cart.products]);
   const allProducts = products;
   //   console.log(products);
   const idSet = new Set(productList.map((p) => p.product_id));
-  const filteredProducts = allProducts.filter((p) => idSet.has(p._id));
+  const filteredProducts = allProducts.filter((p) => idSet.has(p.id));
   //   console.log(filteredProducts);
   const handleRemove = (id: string) => {
     const localStore: { products: cartItem[] } = JSON.parse(
@@ -38,7 +48,7 @@ export default function CartDetails() {
         <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
           {filteredProducts.map((product) => {
             const cartProduct = productList.filter(
-              (p) => p.product_id === product._id
+              (p) => p.product_id === product.id
             );
             const reducedCartProduct: {
               product_id?: string;
@@ -46,7 +56,7 @@ export default function CartDetails() {
             } = cartProduct.reduce((a, b) => ({ ...a, ...b }), {});
             const quantity = reducedCartProduct.quantity;
             return (
-              <div key={product._id} className="flex items-start gap-4">
+              <div key={product.id} className="flex items-start gap-4">
                 <Image
                   src={product.product}
                   alt={product.name}
@@ -65,7 +75,7 @@ export default function CartDetails() {
                 <button
                   className="text-muted-foreground hover:text-black"
                   onClick={() => {
-                    handleRemove(product._id);
+                    handleRemove(product.id);
                   }}
                 >
                   <X size={18} />
@@ -123,7 +133,7 @@ export default function CartDetails() {
               {filteredProducts
                 .reduce((total, product) => {
                   const cartItem = cart.products.find(
-                    (item) => item.product_id === product._id
+                    (item) => item.product_id === product.id
                   );
 
                   if (!cartItem) return total;

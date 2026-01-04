@@ -10,8 +10,14 @@ export interface Product {
 }
 
 export interface ProductResponse {
-  data?: Product[];
+  data?: Product[] | Product;
   message: string;
   error?: string | boolean;
   statusCode?: number;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
 }

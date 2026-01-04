@@ -2,8 +2,8 @@ import AddToCart from "@/app/components/AddToCartButton";
 import ProductSkeleton from "@/app/components/ProductSkeleton";
 import ProductTabs from "@/app/components/ProductTabs";
 import RelatedProducts from "@/app/components/RelatedProducts";
-import { products } from "@/app/data/data";
-import { ProductDetails } from "@/app/types/product";
+import { Product, ProductDetails } from "@/app/types/product";
+import { baseUrl, fetchData } from "@/lib/utils";
 import Image from "next/image";
 import { Suspense } from "react";
 
@@ -13,13 +13,19 @@ const ProductDetail = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
-  const product = products.find((product) => product._id == id);
+  const product: Product = await fetchData(`${baseUrl}products/${id}`, true);
+  // console.log(product);
+
   const details: ProductDetails = {
-    productId: product?._id!,
-    name: product?.name!,
+    productId: product?.id,
+    name: product?.name,
   };
-  //
-  const relatedProducts = products.slice(0, 3);
+
+  const relatedProducts: Product[] = await fetchData(
+    `${baseUrl}products?category=${product?.category}`,
+    true
+  );
+
   //   console.log(product);
   return (
     <div className="container max-w-screen  px-4">
@@ -34,7 +40,7 @@ const ProductDetail = async ({
         </div>
         <div className="details flex flex-col gap-3">
           <h2 className="product-category text-lime-700 font-medium">
-            {product?.category}
+            {product?.category.toLocaleUpperCase()}
           </h2>
           <h1 className="product-name font-extrabold text-xl">
             {product?.name}
@@ -46,11 +52,12 @@ const ProductDetail = async ({
             {product?.description}
           </p>
           <div className="actions ">
-            <AddToCart product_id={product?._id!} />
+            <AddToCart product_id={product?.id} />
           </div>
           <div className="line border-b border-b-gray-300"></div>
           <div className="prod-category text-lime-700">
-            <span className="text-black">Category</span> : {product?.category}
+            <span className="text-black">Category</span> :{" "}
+            {product?.category.toLocaleUpperCase()}
           </div>
           <div className="supported-payments flex flex-col items-center justify-center border border-gray-300">
             <div className="options flex items-center gap 3 pt-2">
@@ -83,11 +90,15 @@ const ProductDetail = async ({
         </div>
       </div>
       <div className="prod-tabs">
-        <ProductTabs description={product?.description!} product={details} />
+        <ProductTabs description={product?.description} product={details} />
       </div>
       <div className="related-products">
         <Suspense fallback={<ProductSkeleton />}>
-          <RelatedProducts products={relatedProducts} />
+          <RelatedProducts
+            products={relatedProducts
+              .filter((p) => p.id !== product?.id)
+              .slice(0, 3)}
+          />
         </Suspense>
       </div>
     </div>

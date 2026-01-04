@@ -22,11 +22,20 @@ export const addedFee = {
   tax: 1,
 };
 
+export const baseUrl = "http://localhost:3500/";
+
 export async function fetchData<T>(url: string, cache = false): Promise<T> {
+  try {
+    await fetch(
+      url,
+      cache ? { next: { revalidate: 60 } } : { cache: "no-store" }
+    );
+  } catch (error) {}
   const res = await fetch(
     url,
     cache ? { next: { revalidate: 60 } } : { cache: "no-store" }
   );
+  // console.log(res);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
