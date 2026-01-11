@@ -5,12 +5,15 @@ export interface Product {
   rating: number;
   instock: number;
   category: string;
-
   description: string;
 }
 
+export interface CreateProduct extends Omit<Product, 'rating'> {
+  rating?: number;
+}
+
 export interface ProductResponse {
-  data?: Product[] | Product;
+  data?: CreateProduct[] | CreateProduct;
   message: string;
   error?: string | boolean;
   statusCode?: number;

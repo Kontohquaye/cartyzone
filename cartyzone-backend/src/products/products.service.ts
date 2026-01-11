@@ -4,7 +4,7 @@ import {
   Product,
   ProductResponse,
 } from './interfaces/product.interface';
-import { categories, products } from './data/data';
+import { categories } from './data/data';
 import { ProductQueryDto } from './dto/product-query.dto';
 import { CartdbService } from 'src/cartdb/cartdb.service';
 import { PrismaPromise } from 'generated/prisma/internal/prismaNamespace';
@@ -53,6 +53,7 @@ export class ProductsService {
   }
 
   async create(product: Product): Promise<ProductResponse> {
+    // console.log('Creating product:', product);
     try {
       const newProduct = await this.cartdbService.product.create({
         data: product,

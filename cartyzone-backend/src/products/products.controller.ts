@@ -36,6 +36,7 @@ export class ProductsController {
 
   @Post('create')
   createProduct(@Body(ValidationPipe) createProductDto: createProductDto) {
+    // console.log('Received product data:', createProductDto);
     return this.productsService.create(createProductDto);
   }
 }

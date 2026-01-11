@@ -30,7 +30,7 @@ model Product {
   name        String
   product     String
   price       Float
-  rating      Float
+  rating      Float    @default(0)
   instock     Int
   category    String
   createdAt   DateTime @default(now())

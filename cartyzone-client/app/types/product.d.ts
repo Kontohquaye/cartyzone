@@ -24,3 +24,9 @@ export interface PriceRangeSliderProps {
   initialMax?: number;
   onChange?: (min: number, max: number) => void;
 }
+
+export type AddProductState = {
+  success: boolean;
+  errors?: Record<string, string[]>;
+  data?: unknown;
+};

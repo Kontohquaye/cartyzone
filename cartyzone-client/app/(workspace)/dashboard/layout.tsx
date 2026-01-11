@@ -1,5 +1,6 @@
 import React from "react";
 import { SiteFooter } from "@/app/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function AdminLayout({
   children,
@@ -10,6 +11,7 @@ export default function AdminLayout({
     <main className="store-layout">
       {children}
       <SiteFooter />
+      <Toaster />
     </main>
   );
 }

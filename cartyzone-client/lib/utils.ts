@@ -44,6 +44,39 @@ export async function fetchData<T>(url: string, cache = false): Promise<T> {
   return res.json() as Promise<T>;
 }
 
+export const PostData = async (url: string, data: any) => {
+  // console.log(`${baseUrl}${url}`, data);
+  const res = await fetch(`${baseUrl}${url}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    throw new Error("Failed to post data");
+  }
+  return res.json();
+};
+
+export const LogInUser = async (
+  url: string,
+  data: { email: string; password: string }
+) => {
+  const res = await fetch(`${url}`, {
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  // if (!res.ok) {
+  //   throw new Error("Failed to post data");
+  // }
+  return res.json();
+};
 // export const fetchData = async (url: string, cache: boolean = false) => {
 //   const res = await fetch(
 //     url,
